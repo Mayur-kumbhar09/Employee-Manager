@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, TextField, Typography, Stack } from '@mui/material';
-import { Container,  Paper } from "@mui/material";
+import {  Paper } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -32,8 +32,6 @@ function UpdateForm() {
         navigate("/")
     }
     return (
-
-        <Container maxWidth="md" >
             <Paper elevation={12} sx={{ marginTop: "4px", height: "50vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <Typography variant='h4' sx={{ fontFamily: "Sans serif", m: 3 }}>Update Employee</Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -41,11 +39,10 @@ function UpdateForm() {
                         <TextField variant="outlined" size="small"   {...register("firstName", { required: true })} />
                         <TextField variant="outlined" size="small"   {...register("lastName", { required: true })} />
                         <TextField variant="outlined" size="small"   {...register("email", { required: true })} />
-                        <Button variant="contained" size="small" sx={{ m: 2 }} type="submit">Add</Button>
+                        <Button variant="contained" size="small" sx={{ m: 2 }} type="submit">Update</Button>
                     </Stack>
                 </form>
             </Paper>
-        </Container>
     )
 }
 export default UpdateForm;

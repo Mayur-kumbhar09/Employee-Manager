@@ -1,4 +1,4 @@
-import { Button, Container, Paper } from '@mui/material'
+import { Button, Paper } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -7,7 +7,7 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import BrowserUpdatedIcon from '@mui/icons-material/BrowserUpdated';
+import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -65,10 +65,9 @@ function HomeComp() {
 
   }, [state])
   return (
-    <Container fixed maxWidth="md">
-      <Paper elevation={8} sx={{ mt: 2 }}>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <Paper elevation={0} sx={{ mt: 2 }}>
+        <TableContainer component={Paper} >
+          <Table aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell align="center">ID</StyledTableCell>
@@ -95,7 +94,7 @@ function HomeComp() {
                     <StyledTableCell align="center">{data.email}</StyledTableCell>
                     <StyledTableCell align="center">
                       <Button onClick={() => { navigate(`/updateEmployee/${data?.id}`) }}>
-                        <BrowserUpdatedIcon />
+                        <EditIcon />
                       </Button>
                       <Button onClick={() => { deleteForm(data.id) }}>
                         <DeleteIcon />
@@ -107,9 +106,6 @@ function HomeComp() {
           </Table>
         </TableContainer>
       </Paper>
-    </Container>
-
-
   )
 }
 

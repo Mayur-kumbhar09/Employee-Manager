@@ -1,4 +1,4 @@
-import { Button, TextField, Typography, Stack, Container } from '@mui/material';
+import { Button, TextField, Typography, Stack } from '@mui/material';
 import React from 'react'
 import axios from 'axios';
 import { useForm } from "react-hook-form";
@@ -18,7 +18,6 @@ function EmpForm() {
         navigate("/")
     }
     return (
-        <Container maxWidth="md" >
             <Paper elevation={12} sx={{ marginTop: "4px", height: "50vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <Typography variant='h4' sx={{ fontFamily: "Sans serif", m: 3 }}>Add Employee</Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -30,7 +29,6 @@ function EmpForm() {
                     </Stack>
                 </form>
             </Paper>
-        </Container>
     );
 }
 export default EmpForm;
